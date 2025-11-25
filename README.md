@@ -35,8 +35,8 @@ Create a `.env` file in the `backend/` directory:
 | :--- | :--- | :--- |
 | `GEMINI_API_KEY` | **Required.** Your Google AI Studio API Key. | `AIzaSy...` |
 | `SECRET_KEY` | **Required.** A secret string for signing JWT tokens. | `any string for tokens` |
-| `FRONTEND_URL` | URL of the frontend (for CORS). Defaults to localhost if unset. | `deployed or local` |
-| `DATABASE_URL` | (Optional) Connection string for PostgreSQL. Defaults to local SQLite. | `postgresql or sqlite local` |
+| `FRONTEND_URL` | (Optional for local) URL of the frontend (for CORS). Defaults to localhost if unset. | `deployed or local` |
+| `DATABASE_URL` | (Optional for local) Connection string for PostgreSQL. Defaults to local SQLite. | `postgresql or sqlite local` |
 
 ### Frontend Variables
 Create a `.env` file in the `frontend/` directory:
