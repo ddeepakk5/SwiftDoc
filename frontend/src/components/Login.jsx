@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// CHANGED: Import 'api' instead of just 'axios'
+// IMPORT THE API CLIENT (This is important!)
 import api from '../api'; 
 import { Mail, Lock, ArrowRight } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -18,12 +19,12 @@ export default function Login() {
         formData.append('password', password);
 
         if (isRegister) {
-            // FIXED: Use api.post with relative path
+            // NOTICE: We use relative paths like '/register'
+            // The 'api' client adds the full URL automatically.
             await api.post('/register', { email, password });
             alert("Account created! Please login.");
             setIsRegister(false);
         } else {
-            // FIXED: Use api.post with relative path
             const res = await api.post('/token', formData);
             localStorage.setItem('token', res.data.access_token);
             navigate('/');
@@ -37,12 +38,18 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-zinc-100 p-4 font-sans">
       <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl w-full max-w-md border border-zinc-200/60">
+        
         <div className="text-center mb-8">
+            <div className="flex justify-center mb-4">
+                <div className="p-3 bg-zinc-50 rounded-2xl border border-zinc-100 shadow-sm">
+                    <Logo className="w-10 h-10" />
+                </div>
+            </div>
             <h1 className="text-3xl font-bold tracking-tight text-black mb-2">
-                {isRegister ? 'Join Platform' : 'Welcome Back'}
+                AutoDraft
             </h1>
             <p className="text-zinc-500 text-sm">
-                {isRegister ? 'Create your workspace' : 'Enter your details to access your projects'}
+                {isRegister ? 'Create your workspace' : 'Enter details to access projects'}
             </p>
         </div>
 
