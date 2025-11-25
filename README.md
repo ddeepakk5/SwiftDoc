@@ -208,9 +208,11 @@ Ensure you update the `VITE_API_URL` in Vercel to point to your deployed Render 
 -----
 
 ## 🧪 Usage Guide
-Demo Testing Login ID - for hosted site only:
-Email - demouser@gmail.com
+**Demo Testing Account (for hosted site only):**
+```
+email - demouser@gmail.com
 pass - demouser
+```
 1.  **Register:** Create a new account on the login page. 
 2.  **New Project:** Click the "+" button, select a format (DOCX/PPTX), and enter a topic.
 3.  **Auto-Outline:** Use the "AI Suggest Outline" button to generate a structure automatically.
