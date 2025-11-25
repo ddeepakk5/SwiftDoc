@@ -11,3 +11,4 @@ python-dotenv
 requests
 psycopg2-binary
 grpcio
+bcrypt==3.2.2
