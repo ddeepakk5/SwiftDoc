@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+// CHANGED: Import 'api' instead of just 'axios'
+import api from '../api'; 
 import { Mail, Lock, ArrowRight } from 'lucide-react';
+
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,21 +18,24 @@ export default function Login() {
         formData.append('password', password);
 
         if (isRegister) {
-            await axios.post('http://localhost:8000/register', { email, password });
+            // FIXED: Use api.post with relative path
+            await api.post('/register', { email, password });
             alert("Account created! Please login.");
             setIsRegister(false);
         } else {
-            const res = await axios.post('http://localhost:8000/token', formData);
+            // FIXED: Use api.post with relative path
+            const res = await api.post('/token', formData);
             localStorage.setItem('token', res.data.access_token);
             navigate('/');
         }
     } catch (err) {
+        console.error(err);
         alert("Authentication failed. Check credentials.");
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-zinc-100 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-zinc-100 p-4 font-sans">
       <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl w-full max-w-md border border-zinc-200/60">
         <div className="text-center mb-8">
             <h1 className="text-3xl font-bold tracking-tight text-black mb-2">
@@ -40,17 +45,6 @@ export default function Login() {
                 {isRegister ? 'Create your workspace' : 'Enter your details to access your projects'}
             </p>
         </div>
-
-        {/* Mock Google Button */}
-        {/* <button className="w-full flex items-center justify-center gap-3 bg-white border border-zinc-200 hover:bg-zinc-50 text-zinc-700 font-medium py-3 rounded-xl transition-all mb-6 text-sm">
-            <img src="https://www.svgrepo.com/show/475656/google-color.svg" className="w-5 h-5" alt="Google" />
-            Continue with Google
-        </button> */}
-
-        {/* <div className="relative mb-8">
-            <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-zinc-100"></div></div>
-            <div className="relative flex justify-center text-xs uppercase tracking-widest"><span className="px-3 bg-white text-zinc-400">Or email</span></div>
-        </div> */}
 
         <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-1.5">
