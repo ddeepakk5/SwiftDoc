@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-// ---------------------------------------------------------------------------
-// 👇 HARDCODE YOUR RENDER URL HERE
-// Example: "https://autodraft-backend.onrender.com"
-const API_URL = "https://swiftdoc-backend.onrender.com"; 
-// ---------------------------------------------------------------------------
+// 1. Try to get the URL from the Environment (Vercel)
+// 2. If it doesn't exist, fallback to Localhost (Your Computer)
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
-const api = axios.create({ baseURL: API_URL });
+const api = axios.create({
+  baseURL: API_URL,
+});
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
