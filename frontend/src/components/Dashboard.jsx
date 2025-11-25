@@ -45,7 +45,7 @@ export default function Dashboard() {
                     <span className="text-black font-extrabold text-xl">A</span>
                 </div>
                 <div>
-                    <h1 className="text-lg font-bold tracking-wide">AutoDraft</h1>
+                    <h1 className="text-lg font-bold tracking-wide">SwiftDoc</h1>
                     <span className="text-xs text-zinc-500 font-medium">Workspace for authoring</span>
                 </div>
             </div>
@@ -71,7 +71,7 @@ export default function Dashboard() {
                  <span className="text-white font-bold text-lg">A</span>
              </div>
              <div>
-                <h1 className="text-xl font-bold tracking-wide text-zinc-900">AutoDraft</h1>
+                <h1 className="text-xl font-bold tracking-wide text-zinc-900">SwiftDoc</h1>
                 <p className="text-[10px] text-zinc-500 font-medium uppercase tracking-wider">Workspace for authoring</p>
              </div>
         </div>
