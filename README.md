@@ -57,7 +57,7 @@ swiftdoc/
 │   │   └── export.py               # Logic for generating .docx and .pptx files
 │   ├── app.py                      # Main Application Entry Point & API Routes
 │   ├── auth.py                     # JWT Authentication & Password Hashing
-│   ├── database.py                 # Database Connection (SQLite/PostgreSQL switcher)
+│   ├── database.py                 # Database Connection (SQLAlchemy/PostgreSQL switcher)
 │   ├── llm_service.py              # Google Gemini API Wrapper
 │   ├── models.py                   # SQLAlchemy Database Models
 │   ├── requirements.txt            # Python Dependencies (Cloud-ready)
