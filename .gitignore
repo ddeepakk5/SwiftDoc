@@ -1,0 +1,41 @@
+# Python Backend
+backend/venv/
+backend/__pycache__/
+backend/routes/__pycache__/
+backend/*.pyc
+backend/.env
+backend/ai_docs.db
+backend/export_*.docx
+backend/export_*.pptx
+
+# Node Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Ignore all node_modules in any folder
+**/node_modules/
+
+# Ignore Python virtual environments
+**/venv/
+venv/
+backend/venv/
+
+# Ignore Database
+*.db
+*.sqlite3
+
+# Ignore Environment Variables (Security)
+.env
+backend/.env
+
+# Ignore Compiled Python files
+**/__pycache__/
+*.pyc
+
+# Ignore OS files
+.DS_Store
