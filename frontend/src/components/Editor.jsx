@@ -79,7 +79,7 @@ export default function Editor() {
             {/* Section Header */}
             <div className="bg-zinc-50 px-6 py-4 border-b border-zinc-100 flex justify-between items-center group-hover:bg-white transition-colors">
                 <h2 className="font-bold text-lg text-zinc-800 flex items-center gap-3">
-                    <span className="w-6 h-6 rounded-full bg-zinc-200 text-zinc-500 flex items-center justify-center text-xs">{sec.order_index + 1}</span>
+                    {/* <span className="w-6 h-6 rounded-full bg-zinc-200 text-zinc-500 flex items-center justify-center text-xs">{sec.order_index + 1}</span> */}
                     {sec.title}
                 </h2>
                 <div className="flex gap-2">
@@ -89,7 +89,7 @@ export default function Editor() {
                         className="text-xs font-bold uppercase tracking-wide flex items-center gap-2 bg-white border border-zinc-200 text-zinc-600 px-4 py-2 rounded-lg hover:bg-black hover:text-white hover:border-black transition-all"
                     >
                         {loading && activeSection === sec.id ? <RefreshCw className="animate-spin" size={14}/> : (sec.content ? <RefreshCw size={14}/> : <Wand2 size={14}/>)}
-                        {sec.content ? 'Regenerate' : 'Generate with AI'}
+                        {sec.content ? 'Generate' : 'Generate with AI'}
                     </button>
                 </div>
             </div>
