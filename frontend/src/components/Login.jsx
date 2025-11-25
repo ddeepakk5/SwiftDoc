@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 // IMPORT THE API CLIENT (This is important!)
 import api from '../api'; 
 import { Mail, Lock, ArrowRight } from 'lucide-react';
-import Logo from './Logo';
+// import Logo from './Logo';
 
 export default function Login() {
   const [email, setEmail] = useState('');
