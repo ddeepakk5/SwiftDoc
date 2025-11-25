@@ -23,7 +23,46 @@ By leveraging the **Google Gemini API**, SwiftDoc transforms simple topics into 
 * **File Processing:** `python-docx`, `python-pptx`.
 
 ---
+## 🔌 API Endpoints
 
+The backend provides a RESTful API documented automatically by FastAPI.
+
+**Base URL:** `http://localhost:8000` (Local) or `https://your-app.onrender.com` (Cloud)
+
+### 🔐 Authentication
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | `/register` | Register a new user account. |
+| `POST` | `/token` | Login with Email/Password to receive a JWT Bearer token. |
+
+### 📁 Projects
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/projects` | List all projects belonging to the authenticated user. |
+| `POST` | `/projects` | Create a new project (Word or PowerPoint). |
+| `GET` | `/projects/{id}` | Get full details and sections of a specific project. |
+| `DELETE`| `/projects/{id}` | Delete a project and its associated data. |
+
+### 🤖 AI & Content Generation
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | `/suggest_outline` | Generate a structured outline based on a topic (Bonus Feature). |
+| `POST` | `/sections/{id}/generate`| Generate AI content for a specific section/slide. |
+| `POST` | `/sections/{id}/refine` | Refine existing content based on user instructions. |
+| `POST` | `/sections/{id}/feedback`| Submit feedback (Like/Dislike) for a section. |
+
+### 📤 Export
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/projects/{id}/export` | Download the final document as `.docx` or `.pptx`. |
+
+> **Note:** All endpoints except Authentication require the `Authorization: Bearer <token>` header.
+
+### 📄 Interactive Documentation
+FastAPI provides automatic interactive documentation. Once the backend is running, visit:
+* **Swagger UI:** `http://localhost:8000/docs`
+* **ReDoc:** `http://localhost:8000/redoc`
+---
 ## 🔑 Environment Variables
 
 To run this project, you need to configure the following environment variables.
@@ -169,8 +208,10 @@ Ensure you update the `VITE_API_URL` in Vercel to point to your deployed Render 
 -----
 
 ## 🧪 Usage Guide
-
-1.  **Register:** Create a new account on the login page.
+Demo Testing Login ID - for hosted site only:
+Email - demouser@gmail.com
+pass - demouser
+1.  **Register:** Create a new account on the login page. 
 2.  **New Project:** Click the "+" button, select a format (DOCX/PPTX), and enter a topic.
 3.  **Auto-Outline:** Use the "AI Suggest Outline" button to generate a structure automatically.
 4.  **Generate & Refine:** Click "Generate" on sections. Use the Refine box to tweak content (e.g., "Make this shorter").
