@@ -42,15 +42,15 @@ export default function Login() {
         </div>
 
         {/* Mock Google Button */}
-        <button className="w-full flex items-center justify-center gap-3 bg-white border border-zinc-200 hover:bg-zinc-50 text-zinc-700 font-medium py-3 rounded-xl transition-all mb-6 text-sm">
+        {/* <button className="w-full flex items-center justify-center gap-3 bg-white border border-zinc-200 hover:bg-zinc-50 text-zinc-700 font-medium py-3 rounded-xl transition-all mb-6 text-sm">
             <img src="https://www.svgrepo.com/show/475656/google-color.svg" className="w-5 h-5" alt="Google" />
             Continue with Google
-        </button>
+        </button> */}
 
-        <div className="relative mb-8">
+        {/* <div className="relative mb-8">
             <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-zinc-100"></div></div>
             <div className="relative flex justify-center text-xs uppercase tracking-widest"><span className="px-3 bg-white text-zinc-400">Or email</span></div>
-        </div>
+        </div> */}
 
         <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-1.5">
